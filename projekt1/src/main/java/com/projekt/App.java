@@ -5,6 +5,7 @@ import com.gargoylesoftware.htmlunit.html.HtmlForm;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 /**
  * Hello world!
@@ -23,11 +24,18 @@ public class App
         }
         HtmlForm form = page.getForms().get(0);
         System.out.println(form);
-        String user = "123";
-        String pw = "123";
+
+        //Creating Scanner and User Input Prompt
+        Scanner input = new Scanner(System.in);
+        System.out.println("Matrikelnummer: ");
+        String user = input.nextLine();
+        System.out.println("Passwort: ");
+        String pw = input.nextLine();
+
 
         form.getInputByName("matrnr").setValueAttribute(user);
         form.getInputByName("passw").setValueAttribute(pw);
+
         try {
             HtmlPage page2 = form.getButtonByName("Notenauskunft (Bildschirm)").click();
         } catch (IOException e) {
