@@ -26,9 +26,11 @@ public class App {
         //Creating Scanner and User Input Prompt
         Scanner input = new Scanner(System.in);
         System.out.println("Matrikelnummer: ");
-        String user = input.nextLine();
+        //String user = input.nextLine();
+        String user = "G180055WI";
         System.out.println("Passwort: ");
-        String pw = input.nextLine();
+        //String pw = input.nextLine();
+        String pw = "leonj1109!";
 
 
         form.getInputByName("matrnr").setValueAttribute(user);
@@ -36,6 +38,11 @@ public class App {
 
         try {
             page2 = form.getInputByValue("Notenauskunft (Bildschirm)").click();
+            //System.out.println(page2.asText());
+            String text = page2.asText();
+            String[] texts = text.split("Semester" );
+            String part2 = texts[2];
+            System.out.println(part2);
         } catch (IOException e) {
             e.printStackTrace();
         }
