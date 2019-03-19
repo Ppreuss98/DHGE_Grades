@@ -33,7 +33,8 @@ public class App {
             //System.out.println(page2.asText());
             String text = page2.asText();
             String[] texts = text.split("\n" );
-            int anzahlFaecher = 6;
+            String[] texts2 = text.split("Semester" );
+            int anzahlFaecher = getSubjects(texts2[2]);
             split(texts,anzahlFaecher);
             //System.out.println(texts[10]);
         } catch (IOException e) {
