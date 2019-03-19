@@ -13,24 +13,19 @@ import java.util.Scanner;
 /**
  * Hello world!
  */
-
-
 public class App {
 
     public static void main(String[] args) {
 
         HtmlPage page2 = null;
         HtmlPage page = null;
-
         page = connectToHTML();     //getting the Login-Page
-
         HtmlForm form = page.getForms().get(0);
         System.out.println(form);
-
         //Set Input into Login and log in
         form.getInputByName("matrnr").setValueAttribute(userInput());
         form.getInputByName("passw").setValueAttribute(passwordInput());
-
+        form.getSelectByName("sem").setSelectedAttribute(setSemester(), true );
 
         try {
             page2 = form.getInputByValue("Notenauskunft (Bildschirm)").click();
@@ -46,17 +41,17 @@ public class App {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
 
-    public static List<Subject> split(String[] texts, int anzahlFaecher) {
 
+
+
+    public static List<Subject> split(String[] texts, int anzahlFaecher) {
         List<Subject> Faecher = new ArrayList<>();
         for (int i = 10; i < anzahlFaecher + 10; i++) {
             String[] texts1 = texts[i].split("\t");
             Subject subject = new Subject(texts1[2], texts1[1], texts1[0]);
-            System.out.println(subject.toString());
+            System.out.println( subject.toString());
             Faecher.add(subject);
         }
         return Faecher;
@@ -86,18 +81,20 @@ public class App {
         Scanner input = new Scanner(System.in);
         System.out.println("Passwort: ");
         String pw = input.nextLine();
-
-        input.close();
         return pw;
+    }
 
-
+    private static String setSemester() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Semester (1-6): ");
+        String semester = input.nextLine();
+        return semester;
     }
 
 
+
     public static int getSubjects(String part) {
-
         int subjects = (part.split("\n").length) - 3;
-
         return subjects;
     }
 
@@ -122,4 +119,12 @@ public class App {
 
         return average / marks;
     }
+
+    public static void StringSplit (){
+
+
+
+
+    }
+
 }
