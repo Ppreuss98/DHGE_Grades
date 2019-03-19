@@ -52,18 +52,21 @@ public class App {
         return page;
     }
 
-    private static String userInput() { //Creating Scanner and User Input Prompt
-        // Scanner input = new Scanner(System.in);
+    //Creating Scanner and User Input Prompt
+    private static String userInput() {
+        Scanner input = new Scanner(System.in);
         System.out.println("Matrikelnummer: ");
-        //String user = input.nextLine();
-        String user = "G180055WI";
+        String user = input.nextLine();
+        //String user = "G180055WI";
         return user;
     }
 
     private static String passwordInput() {
+        Scanner input = new Scanner(System.in);
         System.out.println("Passwort: ");
-        //String pw = input.nextLine();
-        String pw = "leonj1109!";
+        String pw = input.nextLine();
+        //String pw = "leonj1109!";
+        input.close();
         return pw;
     }
 }
