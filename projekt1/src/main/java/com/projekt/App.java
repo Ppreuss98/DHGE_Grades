@@ -1,6 +1,5 @@
 package com.projekt;
 
-
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlForm;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
@@ -14,24 +13,15 @@ import java.util.Scanner;
 /**
  * Hello world!
  */
-
-
 public class App {
 
-<<<<<<< HEAD
-=======
-
->>>>>>> first changes - irrelevant
     public static void main(String[] args) {
 
         HtmlPage page2 = null;
         HtmlPage page = null;
-
         page = connectToHTML();     //getting the Login-Page
-
         HtmlForm form = page.getForms().get(0);
         System.out.println(form);
-
         //Set Input into Login and log in
         form.getInputByName("matrnr").setValueAttribute(userInput());
         form.getInputByName("passw").setValueAttribute(passwordInput());
@@ -91,11 +81,8 @@ public class App {
         Scanner input = new Scanner(System.in);
         System.out.println("Passwort: ");
         String pw = input.nextLine();
-
         input.close();
         return pw;
-
-
     }
 
 
@@ -134,7 +121,4 @@ public class App {
 
 
     }
-
-
-
 }
