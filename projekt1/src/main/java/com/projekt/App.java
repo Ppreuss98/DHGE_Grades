@@ -24,13 +24,18 @@ public class App {
         HtmlForm form = page.getForms().get(0);
         System.out.println(form);
 
-        //Set Input into Login and log in
-        form.getInputByName("matrnr").setValueAttribute(userInput());
-        form.getInputByName("passw").setValueAttribute(passwordInput());
+        //Creating Scanner and User Input Prompt
+        Scanner input = new Scanner(System.in);
+        System.out.println("Matrikelnummer: ");
+        String user = input.nextLine();
+        System.out.println("Passwort: ");
+        String pw = input.nextLine();
+
+        form.getInputByName("matrnr").setValueAttribute(user);
+        form.getInputByName("passw").setValueAttribute(pw);
 
         try {
             page2 = form.getInputByValue("Notenauskunft (Bildschirm)").click();
-            //System.out.println(page2.asText());
             String text = page2.asText();
             String[] texts = text.split("\n");
             String[] texts2 = text.split("Semester");
