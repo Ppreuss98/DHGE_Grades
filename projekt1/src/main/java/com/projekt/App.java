@@ -48,8 +48,6 @@ public class App {
 
     public static List<Subject> split(String[] texts, int anzahlFaecher) {
         List<Subject> Faecher = new ArrayList<>();
-        System.out.println("semester\tsubject\t\tmark");
-        int h = 0;
         for (int i = 10; i < anzahlFaecher + 10; i++) {
             String[] texts1 = texts[i].split("\t");
             Subject subject = new Subject(texts1[2], texts1[1], texts1[0]);
