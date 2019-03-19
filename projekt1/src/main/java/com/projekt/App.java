@@ -46,12 +46,8 @@ public class App {
 
 
 
-
-
-    public static void split(String[] texts, int anzahlFaecher) {
-        String[] semester = new String[anzahlFaecher];
-        String[] subject = new String[anzahlFaecher];
-        String[] mark = new String[anzahlFaecher];
+    public static List<Subject> split(String[] texts, int anzahlFaecher) {
+        List<Subject> Faecher = new ArrayList<>();
         System.out.println("semester\tsubject\t\tmark");
         int h = 0;
         for (int i = 10; i < anzahlFaecher + 10; i++) {
