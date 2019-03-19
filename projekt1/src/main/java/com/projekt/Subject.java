@@ -2,15 +2,17 @@ package com.projekt;
 
 public class Subject {
 
-   private float note;
+   private String note;
    private String name;
-   private int semester;
 
-    public float getNote() {
+
+    private String semester;
+
+    public String getNote() {
         return note;
     }
 
-    public void setNote(float note) {
+    public void setNote(String note) {
         this.note = note;
     }
 
@@ -22,17 +24,22 @@ public class Subject {
         this.name = name;
     }
 
-    public int getSemester() {
+    public String getSemester() {
         return semester;
     }
 
-    public void setSemester(int semester) {
+    public void setSemester(String semester) {
         this.semester = semester;
     }
 
-    public Subject(float note, String name, int semester) {
+    public Subject(String note, String name, String semester) {
         this.note = note;
         this.name = name;
         this.semester = semester;
+    }
+
+    @Override
+    public String toString() {
+        return semester + "\t" + name + "\t\t" + note;
     }
 }
