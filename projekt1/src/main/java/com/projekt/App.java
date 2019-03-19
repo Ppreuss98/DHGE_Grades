@@ -9,14 +9,12 @@ import java.util.Scanner;
 
 /**
  * Hello world!
- *
  */
-public class App 
-{
-    public static void main( String[] args )
-    {
+public class App {
+    public static void main(String[] args) {
         WebClient webClient = new WebClient();
         HtmlPage page = null;
+        HtmlPage page2 = null;
         try {
             page = webClient.getPage("https://gera.dhge.de/SelfService/start.php");
         } catch (IOException e) {
@@ -37,7 +35,7 @@ public class App
         form.getInputByName("passw").setValueAttribute(pw);
 
         try {
-            HtmlPage page2 = form.getButtonByName("Notenauskunft (Bildschirm)").click();
+            page2 = form.getInputByValue("Notenauskunft (Bildschirm)").click();
         } catch (IOException e) {
             e.printStackTrace();
         }
