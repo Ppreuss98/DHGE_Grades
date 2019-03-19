@@ -1,6 +1,5 @@
 package com.projekt;
 
-
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlForm;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
@@ -16,10 +15,6 @@ import java.util.Scanner;
  */
 public class App {
 
-<<<<<<< HEAD
-=======
-
->>>>>>> first changes - irrelevant
     public static void main(String[] args) {
 
         HtmlPage page2 = null;
@@ -47,8 +42,6 @@ public class App {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
 
     public static List<Subject> split(String[] texts, int anzahlFaecher) {
@@ -57,7 +50,7 @@ public class App {
         for (int i = 10; i < anzahlFaecher + 10; i++) {
             String[] texts1 = texts[i].split("\t");
             Subject subject = new Subject(texts1[2], texts1[1], texts1[0]);
-            System.out.println(subject.toString());
+            System.out.println( subject.toString());
             Faecher.add(subject);
         }
         return Faecher;
@@ -100,9 +93,7 @@ public class App {
 
 
     public static int getSubjects(String part) {
-
         int subjects = (part.split("\n").length) - 3;
-
         return subjects;
     }
 
@@ -134,14 +125,5 @@ public class App {
 
 
     }
-
-    public static void StringSplit (){
-
-
-
-
-    }
-
-
 
 }
