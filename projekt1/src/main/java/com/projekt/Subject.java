@@ -40,6 +40,6 @@ public class Subject {
 
     @Override
     public String toString() {
-        return semester + "\t" + name + "\t\t" + note;
+        return semester + "           \t" + name + "\t\t" + note;
     }
 }
