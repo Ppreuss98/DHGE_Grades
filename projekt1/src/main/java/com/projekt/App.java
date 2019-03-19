@@ -5,6 +5,9 @@ import com.gargoylesoftware.htmlunit.html.HtmlForm;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -28,6 +31,7 @@ public class App {
         form.getInputByName("matrnr").setValueAttribute(userInput());
         form.getInputByName("passw").setValueAttribute(passwordInput());
 
+
         try {
             page2 = form.getInputByValue("Notenauskunft (Bildschirm)").click();
             //System.out.println(page2.asText());
@@ -45,22 +49,16 @@ public class App {
 
     }
 
-    public static void split(String[] texts, int anzahlFaecher) {
-        String[] semester = new String[anzahlFaecher];
-        String[] subject = new String[anzahlFaecher];
-        String[] mark = new String[anzahlFaecher];
-        System.out.println("semester\tsubject\t\tmark");
-        int h = 0;
+    public static List<Subject> split(String[] texts, int anzahlFaecher) {
+
+        List<Subject> Faecher = new ArrayList<>();
         for (int i = 10; i < anzahlFaecher + 10; i++) {
             String[] texts1 = texts[i].split("\t");
-            semester[h] = texts1[0];
-            subject[h] = texts1[1];
-            mark[h] = texts1[2];
-
-            System.out.println(semester[h] + "\t\t\t" + subject[h] + "\t\t\t" + mark[h]);
-            h++;
+            Subject subject = new Subject(texts1[2], texts1[1], texts1[0]);
+            System.out.println(subject.toString());
+            Faecher.add(subject);
         }
-
+        return Faecher;
     }
 
     private static HtmlPage connectToHTML() {
