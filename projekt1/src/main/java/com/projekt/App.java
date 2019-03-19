@@ -24,17 +24,9 @@ public class App {
         HtmlForm form = page.getForms().get(0);
         System.out.println(form);
 
-        //Creating Scanner and User Input Prompt
-        Scanner input = new Scanner(System.in);
-        System.out.println("Matrikelnummer: ");
-        String user = input.nextLine();
-        //String user = "G180055WI";
-        System.out.println("Passwort: ");
-        String pw = input.nextLine();
-        //String pw = "leonj1109!";
-
-        form.getInputByName("matrnr").setValueAttribute(user);
-        form.getInputByName("passw").setValueAttribute(pw);
+        //Set Input into Login and log in
+        form.getInputByName("matrnr").setValueAttribute(userInput());
+        form.getInputByName("passw").setValueAttribute(passwordInput());
 
         try {
             page2 = form.getInputByValue("Notenauskunft (Bildschirm)").click();
@@ -58,5 +50,20 @@ public class App {
             e.printStackTrace();
         }
         return page;
+    }
+
+    private static String userInput() { //Creating Scanner and User Input Prompt
+        // Scanner input = new Scanner(System.in);
+        System.out.println("Matrikelnummer: ");
+        //String user = input.nextLine();
+        String user = "G180055WI";
+        return user;
+    }
+
+    private static String passwordInput() {
+        System.out.println("Passwort: ");
+        //String pw = input.nextLine();
+        String pw = "leonj1109!";
+        return pw;
     }
 }
