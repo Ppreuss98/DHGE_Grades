@@ -40,6 +40,8 @@ public class App {
             e.printStackTrace();
         }
 
+
+
     }
     public static void split(String[] texts,int anzahlFaecher){
         String[] semester = new String[anzahlFaecher];
@@ -83,8 +85,24 @@ public class App {
         Scanner input = new Scanner(System.in);
         System.out.println("Passwort: ");
         String pw = input.nextLine();
-        //String pw = "leonj1109!";
+
         input.close();
         return pw;
+
+
+    }
+
+
+
+
+
+
+
+
+    public static int getSubjects(String part) {
+
+    int subjects = (part.split("\n").length) - 3;
+
+      return subjects;
     }
 }
