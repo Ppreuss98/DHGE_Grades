@@ -1,5 +1,6 @@
 package com.projekt;
 
+
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlForm;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
@@ -17,6 +18,10 @@ import java.util.Scanner;
 
 public class App {
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> first changes - irrelevant
     public static void main(String[] args) {
 
         HtmlPage page2 = null;
@@ -122,4 +127,14 @@ public class App {
 
         return average / marks;
     }
+
+    public static void StringSplit (){
+
+
+
+
+    }
+
+
+
 }
