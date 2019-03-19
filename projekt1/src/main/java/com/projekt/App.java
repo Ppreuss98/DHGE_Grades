@@ -26,10 +26,6 @@ public class App {
         form.getInputByName("matrnr").setValueAttribute(userInput());
         form.getInputByName("passw").setValueAttribute(passwordInput());
         form.getSelectByName("sem").setSelectedAttribute(setSemester(), true );
-<<<<<<< HEAD
-
-=======
->>>>>>> Semesterauswahl fertig
 
         try {
             page2 = form.getInputByValue("Notenauskunft (Bildschirm)").click();
@@ -47,11 +43,6 @@ public class App {
         }
     }
 
-<<<<<<< HEAD
-    public static List<Subject> split(String[] texts, int anzahlFaecher) {
-
-        List<Subject> Faecher = new ArrayList<>();
-=======
 
 
 
@@ -63,7 +54,6 @@ public class App {
         String[] mark = new String[anzahlFaecher];
         System.out.println("semester\tsubject\t\tmark");
         int h = 0;
->>>>>>> Semesterauswahl fertig
         for (int i = 10; i < anzahlFaecher + 10; i++) {
             String[] texts1 = texts[i].split("\t");
             Subject subject = new Subject(texts1[2], texts1[1], texts1[0]);
@@ -104,10 +94,6 @@ public class App {
         Scanner input = new Scanner(System.in);
         System.out.println("Semester (1-6): ");
         String semester = input.nextLine();
-<<<<<<< HEAD
-=======
-        input.close();
->>>>>>> Semesterauswahl fertig
         return semester;
     }
 
