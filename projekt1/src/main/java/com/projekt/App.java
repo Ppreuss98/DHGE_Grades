@@ -39,9 +39,10 @@ public class App {
             String[] texts = text.split("\n");
             String[] texts2 = text.split("Semester");
             int anzahlFaecher = getSubjects(texts2[2]);
+            System.out.println("Semester        Fach    Note");
             split(texts, anzahlFaecher);
             //System.out.println(texts[10]);
-            System.out.println("Durchschnitt:\t\t\t" + getAverage(texts, anzahlFaecher));
+            System.out.println("\n" + "Durchschnitt: " + getAverage(texts, anzahlFaecher));
         } catch (IOException e) {
             e.printStackTrace();
         }
