@@ -32,11 +32,32 @@ public class App {
             page2 = form.getInputByValue("Notenauskunft (Bildschirm)").click();
             //System.out.println(page2.asText());
             String text = page2.asText();
-            String[] texts = text.split("Semester");
-            String part2 = texts[2];
-            System.out.println(part2);
+            String[] texts = text.split("\n" );
+            String[] texts2 = text.split("Semester" );
+            int anzahlFaecher = getSubjects(texts2[2]);
+            split(texts,anzahlFaecher);
+            //System.out.println(texts[10]);
         } catch (IOException e) {
             e.printStackTrace();
+        }
+
+
+
+    }
+    public static void split(String[] texts,int anzahlFaecher){
+        String[] semester = new String[anzahlFaecher];
+        String[] subject = new String[anzahlFaecher];
+        String[] mark = new String[anzahlFaecher];
+        System.out.println("semester\tsubject\t\tmark");
+        int h = 0;
+        for (int i= 10;i<anzahlFaecher+10;i++){
+            String[] texts1 = texts[i].split("\t");
+            semester[h] = texts1[0];
+            subject[h] = texts1[1];
+            mark[h] = texts1[2];
+
+            System.out.println(semester[h]+"\t\t\t"+subject[h]+"\t\t\t"+mark[h]);
+                    h++;
         }
 
     }
@@ -65,8 +86,24 @@ public class App {
         Scanner input = new Scanner(System.in);
         System.out.println("Passwort: ");
         String pw = input.nextLine();
-        //String pw = "leonj1109!";
+
         input.close();
         return pw;
+
+
+    }
+
+
+
+
+
+
+
+
+    public static int getSubjects(String part) {
+
+    int subjects = (part.split("\n").length) - 3;
+
+      return subjects;
     }
 }
