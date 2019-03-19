@@ -89,7 +89,6 @@ public class App {
         Scanner input = new Scanner(System.in);
         System.out.println("Semester (1-6): ");
         String semester = input.nextLine();
-        input.close();
         return semester;
     }
 
