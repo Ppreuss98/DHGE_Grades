@@ -25,6 +25,7 @@ public class App {
         //Set Input into Login and log in
         form.getInputByName("matrnr").setValueAttribute(userInput());
         form.getInputByName("passw").setValueAttribute(passwordInput());
+        form.getSelectByName("sem").setSelectedAttribute(setSemester(), true );
 
 
         try {
@@ -81,9 +82,17 @@ public class App {
         Scanner input = new Scanner(System.in);
         System.out.println("Passwort: ");
         String pw = input.nextLine();
-        input.close();
         return pw;
     }
+
+    private static String setSemester() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Semester (1-6): ");
+        String semester = input.nextLine();
+        input.close();
+        return semester;
+    }
+
 
 
     public static int getSubjects(String part) {
