@@ -27,4 +27,4 @@ target/
 .settings/*
 .classpath
 .project
-projekt1.iml
+project1.iml
